@@ -8,13 +8,20 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
         {name:'Motorola XOOM with Wi-Fi.',
             snipet: 'The Next, Next Generation Tablet.'},
         {name:'Motorola XOOM',
-            snipet:'The next, next generation tablet'}
+            snipet:'The next, next generation tablet'},
+        {name:'Motorola XOOM with Wi-Fi.',
+            snipet: 'The Next, Next Generation Tablet.'}
+
     ];
 
     //Filter
 
     var date = new Date();
     $scope.today = date;
+
+    var date2 = angular.isDate(date);
+    $scope.date3 = date2;
+
 });
 
 
