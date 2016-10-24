@@ -22,12 +22,6 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
     var date2 = angular.isDate(date);
     $scope.date3 = date2;
 
-    var Person = function () {
-        console.log('instance created');
-    };
-    var person1 = new Person();
-    var person2 = new Person();
-
 });
 
 
