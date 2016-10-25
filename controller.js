@@ -20,7 +20,21 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
     $scope.today = date;
 
     var date2 = angular.isDate(date);
-    $scope.date3 = date2;
+    if (date2 == true) {
+        $scope.date3 = 'Это время';
+    }
+
+    function User(name2) {
+        this.name2 = name2;
+
+        this.sayHi = function() {
+            console.log( "Моё имя: " + this.name2 );
+        };
+    }
+
+    var ivan = new User("Иван");
+
+    ivan.sayHi();
 
 });
 
