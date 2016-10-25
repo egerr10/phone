@@ -17,24 +17,39 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
     //Filter
 
     var date = new Date();
-    $scope.today = date;
-
     var date2 = angular.isDate(date);
     if (date2 == true) {
-        $scope.date3 = 'Это время';
+        $scope.date3 = 'Сегодня';
+        $scope.today = date;
     }
 
-    function User(name2) {
-        this.name2 = name2;
+    function User(name, surname, age) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
 
         this.sayHi = function() {
-            console.log( "Моё имя: " + this.name2 );
+            console.log('Моё имя: ' + this.name + ' ' + this.surname + ' ' + this.age);
         };
+
+        this.printPage = function () {
+            $scope.printThis = 'Моё имя: ' + this.name + ' ' + this.surname;
+            $scope.printAge = this.age;
+        }
     }
 
-    var ivan = new User("Иван");
-
+    var ivan = new User('Иван', 'Петров', '25');
     ivan.sayHi();
+    ivan.printPage();
+
+    var ivan2 = new User('Иван2', 'Петров2', '25');
+    ivan2.sayHi();
+
+    var ivan3 = new User('Иван3', 'Петров3', '25');
+    ivan3.sayHi();
+
+
+
 
 });
 

@@ -22,17 +22,21 @@
 <p>Общее кол-во телефонов {{phones.length}}</p>
 
 <table>
-    <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]">
+    <tr ng-repeat="i in [0, 1]">
         <td>
             {{i+1}}
         </td>
     </tr>
 </table>
 <hr>
-{{today | date:'dd MM yyyy, h.m.s'}}
 
-<p>{{isDate2}}</p>
-<p>{{date3}}</p>
+
+<p>{{date3}} {{today | date:'dd.MM.yyyy, hh.mm.ss'}}</p>
+
+<p>{{printThis}}, мне {{printAge}}</p>
+<p>{{ivan3}}</p>
+
+
 
 </body>
 </html>
