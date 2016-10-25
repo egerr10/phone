@@ -48,9 +48,6 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
     var ivan3 = new User('Иван3', 'Петров3', '25');
     ivan3.sayHi();
 
-
-
-
 });
 
 
