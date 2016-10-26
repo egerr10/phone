@@ -17,16 +17,17 @@
 <input type="text" ng-model="query">
 
 <ul>
-    <li ng-repeat="phone in phones | filter: {name:query, status:true}">
+    <li ng-repeat="phone in phones | filter: doneAndFilter">
         <span>{{phone.name}}</span>
         <p>
             {{phone.snipet}}<br />
-            {{phone.status}}
+           Status: {{phone.status}}
+            Priority: {{phone.priority}}
         </p>
     </li>
 </ul>
 
-<p>Общее кол-во телефонов {{phones.length}}</p>
+<p>Общее кол-во телефонов {{(phones | filter:doneAndFilter).length}}</p>
 
 <hr>
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{angularjs-DefinitelyTyped, ng-command-DefinitelyTyped, node-DefinitelyTyped, underscore}" />
+    <file url="PROJECT" libraries="{angular, angularjs-DefinitelyTyped, ng-command-DefinitelyTyped, node-DefinitelyTyped, underscore}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
     <includedPredefinedLibrary name="WebGL" />
   </component>
