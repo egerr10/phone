@@ -3,43 +3,35 @@
 <head>
     <link type="text/css" rel="stylesheet" href="exemple-styles.css" />
     <script type="text/plain" src="https://raw.githubusercontent.com/jashkenas/underscore/master/underscore-min.js"></script>
-    <script src="https://code.angularjs.org/1.0.0rc3/angular-1.0.0rc3.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
 
     <script src="controller.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body ng-controller="PhoneListCtrl">
+<div class="container">
 <h2>{{title}}</h2>
+
+<input type="text" ng-model="query">
+
 <ul>
-    <li ng-repeat="phone in phones">
+    <li ng-repeat="phone in phones | filter: {name:query, status:true}">
         <span>{{phone.name}}</span>
         <p>
-            {{phone.snipet}}
+            {{phone.snipet}}<br />
+            {{phone.status}}
         </p>
     </li>
 </ul>
+
 <p>Общее кол-во телефонов {{phones.length}}</p>
 
-<table>
-    <tr ng-repeat="i in [0, 1]">
-        <td>
-            {{i+1}}
-        </td>
-    </tr>
-</table>
 <hr>
 
 
 <p>{{date3}} {{today | date:'dd.MM.yyyy, hh.mm.ss'}}</p>
-
-<p>{{printThis}}, мне {{printAge}}</p>
-<p>{{ivanTest}}</p>
-
-<div id="elem"></div>
-
-
-
-
+</div>
 </body>
 </html>
