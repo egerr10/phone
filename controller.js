@@ -20,7 +20,7 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
     //Filter
 $scope.doneAndFilter = function (phoneItem) {
     return phoneItem.name && phoneItem.priority > 1 && phoneItem.status === true;
-}
+};
 
     var date = new Date();
     var date2 = angular.isDate(date);
@@ -28,5 +28,4 @@ $scope.doneAndFilter = function (phoneItem) {
         $scope.date3 = 'Сегодня';
         $scope.today = date;
     }
-
 });
