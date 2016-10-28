@@ -9,5 +9,6 @@
     <orderEntry type="library" name="node-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="underscore" level="application" />
     <orderEntry type="library" name="angular" level="application" />
+    <orderEntry type="library" name="json5-DefinitelyTyped" level="application" />
   </component>
 </module>

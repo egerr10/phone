@@ -1,8 +1,16 @@
 
 var phonecatApp = angular.module('phonecatApp', []);
-phonecatApp.controller('PhoneListCtrl', function($scope) {
+phonecatApp.controller('PhoneListCtrl', function($scope, $http) {
     $scope.title = 'Телефоны';
-    $scope.phones = [
+
+    $http.get('phones.json').success(function (data, status, headers, config) {
+    console.log('this id Date', data, '\n\nThis is Status', status, '\n\nThis is Headers',
+        headers, '\n\nThis is config', config);
+        $scope.phones = data;
+    });
+
+
+    /*$scope.phones = [
         {'name': 'Nexus S',
             'snipet': 'Fast but got faster with Nexus S',
         'status': true,
@@ -16,7 +24,7 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
             'status': true,
             'priority':3}
     ];
-
+*/
     var date = new Date();
     var date2 = angular.isDate(date);
     if (date2 == true) {
