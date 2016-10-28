@@ -17,15 +17,35 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
             'priority':3}
     ];
 
-    //Filter
-$scope.doneAndFilter = function (phoneItem) {
-    return phoneItem.name && phoneItem.priority > 1 && phoneItem.status === true;
-};
-
     var date = new Date();
     var date2 = angular.isDate(date);
     if (date2 == true) {
         $scope.date3 = 'Сегодня';
         $scope.today = date;
     }
+
+    //Filter
+$scope.doneAndFilter = function (phoneItem) {
+    return phoneItem.name && phoneItem.priority > 1 && phoneItem.status === true;
+};
+
+    $scope.sortField = undefined;
+    $scope.reverse = false;
+
+    $scope.sort = function (fieldName) {
+        if ($scope.sortField === fieldName) {
+            $scope.reverse = !$scope.reverse;
+        } else {
+            $scope.sortField = fieldName;
+            $scope.reverse = false;
+        }
+    };
+
+    $scope.isSortUp = function (fieldName) {
+        return $scope.sortField === fieldName && !$scope.reverse;
+    };
+
+    $scope.isSortDown = function (fieldName) {
+        return $scope.sortField === fieldName && $scope.reverse;
+    };
 });

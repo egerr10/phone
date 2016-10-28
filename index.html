@@ -4,7 +4,7 @@
     <link type="text/css" rel="stylesheet" href="exemple-styles.css" />
     <script type="text/plain" src="https://raw.githubusercontent.com/jashkenas/underscore/master/underscore-min.js"></script>
     <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="controller.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -17,7 +17,7 @@
 <input type="text" ng-model="query">
 
 <ul>
-    <li ng-repeat="phone in phones | filter: doneAndFilter">
+    <li ng-repeat="phone in filterFun = (phones | filter: query)">
         <span>{{phone.name}}</span>
         <p>
             {{phone.snipet}}<br />
@@ -27,12 +27,26 @@
     </li>
 </ul>
 
-<p>Общее кол-во телефонов {{(phones | filter:doneAndFilter).length}}</p>
+<p>Общее кол-во телефонов {{filterFun.length}}</p>
 
 <hr>
-
-
 <p>{{date3}} {{today | date:'dd.MM.yyyy, hh.mm.ss'}}</p>
+
+    <table>
+        <thead>
+        <tr>
+            <th><a href="" ng-click="sort('name')">Name
+            <i class="glyphicon" ng-class="{'glyphicon-chevron-up' : isSortUp('name'),
+                                          'glyphicon-chevron-down' : isSortDown('name')}"></i>
+             </a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="phone in phones | orderBy:sortField:reverse">
+            <td>{{phone.name}}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

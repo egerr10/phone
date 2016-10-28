@@ -14,14 +14,6 @@
  {text:'Build an app', done:false}
  ];
 
- $scope.action = function () {
- $scope.ex = 'OK'
- }
- $scope.ex = 'World';
-
- $scope.shito = 'shito';
- }
-
  //конструктор
  function User(name, surname, age) {
 
