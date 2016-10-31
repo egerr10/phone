@@ -12,7 +12,7 @@ phonecatApp.controller('PhoneListCtrl', function($scope, $http) {
 
     /*$scope.phones = [
         {'name': 'Nexus S',
-            'snipet': 'Fast but got faster with Nexus S',
+        'snipet': 'Fast but got faster with Nexus S',
         'status': true,
         'priority':1},
         {'name':'Motorola XOOM with Wi-Fi.',
